@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button';
 import SectionHead from '../../UI/SectionHead';
 
@@ -39,7 +40,9 @@ const Services = () => {
                 Price: ${service.price}
               </p>
               <span className='text-[#FF3811] text-2xl cursor-pointer'>
-                <Button displayName={'Booking'} />
+                <Link to={`services/${service._id}`}>
+                  <Button displayName={'Booking'} />
+                </Link>
               </span>
             </div>
           </div>
