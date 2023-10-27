@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import Button from '../UI/Button';
 import Navbar from './Navbar/Navbar';
@@ -7,7 +8,9 @@ const Header = () => {
       <div className='flex justify-between items-center py-4'>
         <img src={logo} className='w-20' />
         <Navbar />
-        <Button displayName={'Login'} />
+        <Link to={'/login'}>
+          <Button displayName={'Login'} />
+        </Link>
       </div>
     </div>
   );
