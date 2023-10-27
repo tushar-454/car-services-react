@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <div className='max-w-screen-xl mx-auto'>
       <div className='flex justify-between items-center py-4'>
-        <img src={logo} className='w-20' />
+        <Link to={'/'}>
+          {' '}
+          <img src={logo} className='w-20' />
+        </Link>
         <Navbar />
         <Link to={'/login'}>
           <Button displayName={'Login'} />
