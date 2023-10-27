@@ -22,7 +22,7 @@ const BookingServices = () => {
   const handleBookingServices = (e) => {
     e.preventDefault();
     const { name, email, date, price } = bookingInfo;
-    const bookingOrder = { name, email, date, price };
+    const bookingOrder = { name, email, date, price, img: service.img };
 
     axios
       .post(`http://localhost:5000/booking`, bookingOrder)

@@ -20,6 +20,10 @@ const navItems = [
     name: 'Contact',
     path: '/contact',
   },
+  {
+    name: 'Bookings',
+    path: '/bookings',
+  },
 ];
 const Navbar = () => {
   return (
