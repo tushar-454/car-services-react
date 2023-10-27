@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-const Button = ({ displayName, rest, style }) => {
+const Button = ({ displayName, style, ...rest }) => {
   return (
     <button
       {...rest}

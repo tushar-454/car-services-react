@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import sliderOneImg from '../../../assets/images/banner/1.jpg';
 import sliderTwoImg from '../../../assets/images/banner/2.jpg';
 import sliderThreeImg from '../../../assets/images/banner/3.jpg';
@@ -138,18 +139,18 @@ const Slider = () => {
             <img src={sliderSixImg} className='w-full h-full rounded-lg' />
           </div>
         </div>
-        <div className='absolute bottom-6 right-6'>
+        <div className='flex gap-2 absolute bottom-6 right-6'>
           <button
             onClick={prevSlide}
-            className='text-white text-xl bg-gray-700/70 w-16 h-16 border-gray-800 rounded-full mr-3 transition hover:bg-[#FF3811]'
+            className='flex justify-center items-center text-white text-xl bg-gray-700/70 w-16 h-16 border-gray-800 rounded-full transition hover:bg-[#FF3811]'
           >
-            Prev
+            <AiOutlineArrowLeft className='text-2xl' />
           </button>
           <button
             onClick={nextSlide}
-            className='text-white text-xl bg-gray-700/70 w-16 h-16 border-gray-800 rounded-full transition hover:bg-[#FF3811]'
+            className='flex justify-center items-center text-white text-xl bg-gray-700/70 w-16 h-16 border-gray-800 rounded-full transition hover:bg-[#FF3811]'
           >
-            Next
+            <AiOutlineArrowRight className='text-2xl' />
           </button>
         </div>
       </div>

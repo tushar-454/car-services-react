@@ -1,9 +1,17 @@
+import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import loginImg from '../../assets/images/login/login.svg';
 import Button from '../UI/Button';
 import Input from '../UI/Input';
 const Login = () => {
+  const { loginWithGoogle } = useContext(AuthContext);
+  const handleLoginwithGoogle = () => {
+    loginWithGoogle()
+      .then((currentUser) => console.log(currentUser.user))
+      .catch((error) => console.log(error.message));
+  };
   return (
     <div className='max-w-screen-xl mx-auto'>
       <div className='flex justify-between items-center my-10'>
@@ -42,7 +50,10 @@ const Login = () => {
             Or sign in with
           </p>
           <div className='flex justify-center'>
-            <button className='flex items-center gap-3 py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-[#FF3811] focus:outline-none bg-white rounded-full border border-[#FF3811] active:scale-105 transition'>
+            <button
+              onClick={handleLoginwithGoogle}
+              className='flex items-center gap-3 py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-[#FF3811] focus:outline-none bg-white rounded-full border border-[#FF3811] active:scale-105 transition'
+            >
               <FcGoogle className='text-2xl' />
               Login with google
             </button>
