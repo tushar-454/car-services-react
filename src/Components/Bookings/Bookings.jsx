@@ -11,6 +11,15 @@ const Bookings = () => {
       .get(`http://localhost:5000/booking?email=${user.email}`)
       .then((res) => setBookings(res.data));
   }, [user]);
+
+  const handleBookingDelete = (id) => {
+    axios.delete(`http://localhost:5000/booking/${id}`).then((res) => {
+      console.log(res.data);
+      const remaning = bookings.filter((book) => book._id !== id);
+      setBookings(remaning);
+    });
+  };
+
   return (
     <div className='max-w-screen-xl mx-auto px-4'>
       <h1 className='text-4xl font-bold text-center'>My bookings</h1>
@@ -28,9 +37,17 @@ const Bookings = () => {
           </thead>
           <tbody>
             {bookings.map((book, index) => (
-              <tr key={index}>
+              <tr
+                key={index}
+                className={`border ${
+                  parseInt(index + 1) % 2 !== 0 && 'bg-slate-50'
+                }`}
+              >
                 <td className=''>
-                  <ImCross className='text-2xl' />
+                  <ImCross
+                    className='text-2xl cursor-pointer'
+                    onClick={() => handleBookingDelete(book._id)}
+                  />
                 </td>
                 <td className=''>
                   <img src={book.img} className='w-32' />
