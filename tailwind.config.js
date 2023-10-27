@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      transitionTimingFunction: {
+        custom: 'cubic-bezier(1,-0.01, 0.23, 0.99)',
+      },
+    },
   },
   plugins: [],
 };
