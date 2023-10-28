@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,13 @@ const Login = () => {
   const { loginWithGoogle } = useContext(AuthContext);
   const handleLoginwithGoogle = () => {
     loginWithGoogle()
-      .then((currentUser) => console.log(currentUser.user))
+      .then((currentUser) => {
+        console.log('login successfull');
+        const user = { email: currentUser.user.email };
+        axios
+          .post(`http://localhost:5000/jwt`, user, { withCredentials: true })
+          .then((res) => console.log(res.data));
+      })
       .catch((error) => console.log(error.message));
   };
   return (
