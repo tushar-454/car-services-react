@@ -7,7 +7,7 @@ import Navbar from './Navbar/Navbar';
 const Header = () => {
   const { user, signoutFunc } = useContext(AuthContext);
   return (
-    <div className='max-w-screen-xl mx-auto'>
+    <div className='max-w-screen-xl mx-auto px-4'>
       <div className='flex justify-between items-center py-4'>
         <Link to={'/'}>
           {' '}

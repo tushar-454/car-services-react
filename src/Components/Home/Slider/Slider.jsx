@@ -42,7 +42,7 @@ const Slider = () => {
           <div className='slider w-full h-full absolute transition ease-custom duration-500 rounded-lg'>
             <img src={sliderOneImg} className='w-full h-full rounded-lg' />
             {/* slider content 1  */}
-            <div className='content bg-gradient-to-r from-[#000000] to-[#00000000] w-full h-full absolute top-0 space-y-4'>
+            <div className='content rounded-lg bg-gradient-to-r from-[#000000] to-[#00000000] w-full h-full absolute top-0 space-y-4'>
               <div className='h-full ml-10 gap-4 flex flex-col justify-center items-start'>
                 <h1 className='text-5xl font-boldss text-white w-1/4'>
                   Affordable Price For Car Servicing
@@ -71,7 +71,7 @@ const Slider = () => {
           {/* slider - 2  */}
           <div className='slider w-full h-full absolute transition ease-custom duration-500 rounded-lg'>
             <img src={sliderTwoImg} className='w-full h-full rounded-lg' />
-            <div className='content bg-gradient-to-r from-[#000000] to-[#00000000] w-full h-full absolute top-0 space-y-4'>
+            <div className='content rounded-lg bg-gradient-to-r from-[#000000] to-[#00000000] w-full h-full absolute top-0 space-y-4'>
               <div className='h-full ml-10 gap-4 flex flex-col justify-center items-start'>
                 <h1 className='text-5xl font-boldss text-white w-1/4'>
                   Affordable Price For Car Servicing
@@ -100,7 +100,7 @@ const Slider = () => {
           {/* slider - 3  */}
           <div className='slider w-full h-full absolute transition ease-custom duration-500 rounded-lg'>
             <img src={sliderThreeImg} className='w-full h-full rounded-lg' />
-            <div className='content bg-gradient-to-r from-[#000000] to-[#00000000] w-full h-full absolute top-0 space-y-4'>
+            <div className='content rounded-lg bg-gradient-to-r from-[#000000] to-[#00000000] w-full h-full absolute top-0 space-y-4'>
               <div className='h-full ml-10 gap-4 flex flex-col justify-center items-start'>
                 <h1 className='text-5xl font-boldss text-white w-1/4'>
                   Affordable Price For Car Servicing

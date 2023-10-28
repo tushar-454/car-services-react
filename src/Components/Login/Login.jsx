@@ -1,13 +1,15 @@
 import axios from 'axios';
 import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import loginImg from '../../assets/images/login/login.svg';
 import Button from '../UI/Button';
 import Input from '../UI/Input';
 const Login = () => {
   const { loginWithGoogle } = useContext(AuthContext);
+  const { state } = useLocation();
+  const navigate = useNavigate();
   const handleLoginwithGoogle = () => {
     loginWithGoogle()
       .then((currentUser) => {
@@ -15,7 +17,10 @@ const Login = () => {
         const user = { email: currentUser.user.email };
         axios
           .post(`http://localhost:5000/jwt`, user, { withCredentials: true })
-          .then((res) => console.log(res.data));
+          .then((res) => {
+            console.log(res.data);
+            navigate(state || '/');
+          });
       })
       .catch((error) => console.log(error.message));
   };
